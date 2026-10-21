@@ -1,57 +1,54 @@
-# Airline Sentiment AI — Streamlit Deployment
+Twitter US Airline Sentiment Analysis
+A sentiment analysis project that classifies tweets about US airlines into Positive, Neutral, or Negative sentiment using word embeddings and a Bidirectional LSTM (BiLSTM) neural network.
+🚀 Live Demo
+Try the deployed Streamlit application:
 
-A professional Streamlit interface for the Twitter US Airline Sentiment Bidirectional LSTM model.
-
-## Included
-- `app.py` — single-tweet prediction, class probability visualization, and CSV batch predictions
-- `Twitter_Airline_BiLSTM.keras` — trained model supplied for this deployment
-- `requirements.txt` — Python dependencies
-- `runtime.txt` — Python runtime for Streamlit Community Cloud
-- `.gitignore` — common local/environment files
-
-## Important: two training artifacts are still required
-The `.keras` file alone is not sufficient for text inference. The model was trained with a fitted Keras `Tokenizer`, so deployment also needs these files from the **same notebook run**:
-
-- `twitter_airline_tokenizer.pkl`
-- `twitter_airline_label_mapping.pkl`
-
-In the notebook, run the section **“13. Save the Model and Tokenizer”** after training. It should create both files. Copy them into this same project folder beside `app.py`.
-
-Do not fit a new tokenizer on random text or a new dataset: its word-to-index mapping would not match the trained embedding layer.
-
-## Run locally (Windows)
-1. Install Python 3.11.
-2. Extract this ZIP.
-3. Open a terminal in the extracted folder.
-4. Create and activate a virtual environment:
-
-   ```powershell
-   py -3.11 -m venv .venv
-   .venv\Scripts\activate
-   ```
-
-5. Install dependencies:
-
-   ```powershell
-   python -m pip install --upgrade pip
+Open the Twitter US Airline Sentiment App
+📌 Project Overview
+The goal of this project is to analyze airline-related tweets and predict the sentiment expressed in each tweet.
+Sentiment Classes
+- Positive
+- Neutral
+- Negative
+🧠 Model & Workflow
+1. Prepare and clean the tweet text.
+2. Convert text into numerical sequences using the project's text-processing and embedding workflow.
+3. Feed the sequences into a Bidirectional LSTM (BiLSTM) model.
+4. Predict the sentiment class for each tweet.
+🛠️ Technologies
+- Python
+- TensorFlow / Keras
+- Streamlit
+- Pandas
+- NumPy
+- Natural Language Processing (NLP)
+- Word Embeddings
+- Bidirectional LSTM (BiLSTM)
+📂 Project Links
+- GitHub Repository: Twitter-us-Airline-Embedded
+- Kaggle Notebook: Twitter US Airline Embedded
+- Live Application: Streamlit Demo
+▶️ Run Locally
+1. Clone the repository:
+   git clone https://github.com/MostafaTamerDev/Twitter-us-Airline-Embedded.git
+   cd Twitter-us-Airline-Embedded
+2. Create and activate a virtual environment (recommended).
+3. Install the dependencies:
    pip install -r requirements.txt
-   ```
-
-6. Ensure all three artifacts are in the same folder.
-7. Start the app:
-
-   ```powershell
+4. Run the Streamlit app:
    streamlit run app.py
-   ```
-
-## Deploy to Streamlit Community Cloud
-1. Create a GitHub repository, e.g. `airline-sentiment-streamlit`.
-2. Upload `app.py`, `requirements.txt`, `runtime.txt`, `.gitignore`, and the three model artifacts.
-3. In Streamlit Community Cloud, choose **Create app**.
-4. Select the repository, branch, and `app.py` as the main file.
-5. Deploy.
-
-The model file included here is about 31 MB, below GitHub's normal 100 MB per-file limit. Check the repository size and any organization-specific limits before pushing.
-
-## Privacy
-Uploaded CSV files are processed by the running app. Do not upload confidential or personally identifying data to a public deployment.
+📁 Main Files
+- app.py — Streamlit application.
+- Twitter_Airline_BiLSTM.keras — Trained BiLSTM model (if included in the repository).
+- requirements.txt — Python dependencies.
+- .python-version — Specifies the Python version used for deployment.
+📊 Evaluation
+Model evaluation results should be added here if available, such as macro F1-score, precision, recall, and the confusion matrix. No metrics are listed here unless verified from the notebook or evaluation output.
+🔮 Possible Improvements
+- Add a confusion matrix and per-class precision, recall, and F1-score.
+- Improve text preprocessing and handling of misspellings or emojis.
+- Expand testing with additional tweets and edge cases.
+👤 Author
+Mostafa Tamer
+- GitHub: MostafaTamerDev
+- Kaggle: mostafatamerr
