@@ -71,9 +71,6 @@ The goal of this project is to analyze airline-related tweets and predict the se
 - `requirements.txt` — Python dependencies.
 - `.python-version` — Specifies the Python version used for deployment.
 
-## 📊 Evaluation
-
-Model evaluation results should be added here if available, such as macro F1-score, precision, recall, and the confusion matrix. No metrics are listed here unless verified from the notebook or evaluation output.
 
 ## 🔮 Possible Improvements
 
